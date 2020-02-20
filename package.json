@@ -1,0 +1,24 @@
+{
+  "name": "gioneco-openapi-sdk",
+  "version": "1.0.0",
+  "description": "智元汇开发平台sdk",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc -p ."
+  },
+  "keywords": [
+    "智元汇"
+  ],
+  "author": "yunmoon",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "qs": "^6.9.1"
+  },
+  "devDependencies": {
+    "ts-node": "3.3.0",
+    "typescript": "3.3.3333",
+    "@types/node": "^8.0.29"
+  }
+}
