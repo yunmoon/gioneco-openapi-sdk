@@ -5,7 +5,9 @@ function objectSort(obj) {
   const keys = Object.keys(obj).sort()
   let newObj = {}
   keys.forEach((val) => {
-    newObj[val] = encodeURIComponent(obj[val])
+    if (obj[val] !== "") {
+      newObj[val] = encodeURIComponent(obj[val])
+    }
   })
   return newObj
 }
