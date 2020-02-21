@@ -16,8 +16,7 @@ function formatStr(obj) {
 }
 function getSign(str, secret) {
   str += `&app_key=${secret}`
-  const md5 = crypto.createHash('md5')
-  return md5.update(str).digest('hex').toUpperCase();
+  return md5(str).toUpperCase();
 }
 function sign(params, secret) {
   let sign = getSign(formatStr(objectSort(params)), secret);
@@ -46,8 +45,12 @@ function aesEcbDecrypt(str, aesKey) {
   cipherChunks.push(decipher.final(clearEncoding));
   return cipherChunks.join('');
 }
+function md5(str) {
+  return crypto.createHash('md5').update(str).digest('hex');
+}
 export {
   sign,
   aesEcbEncrypt,
-  aesEcbDecrypt
+  aesEcbDecrypt,
+  md5
 }

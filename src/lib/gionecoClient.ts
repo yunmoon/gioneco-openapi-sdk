@@ -1,4 +1,4 @@
-import { sign, aesEcbDecrypt, aesEcbEncrypt } from "./siginUtil";
+import { sign, aesEcbDecrypt, aesEcbEncrypt, md5 } from "./siginUtil";
 import axios from "axios";
 type httpMethod = {
   http_method: string
@@ -24,7 +24,7 @@ export class GionecoClient {
       timestamp: time,
       version,
       nonceStr: "30b0dd2d",
-      biz_content: JSON.stringify(bizContent)
+      biz_content: md5(JSON.stringify(bizContent))
     }
     const signStr = sign(obj, this.secret);
     obj.sign = signStr;

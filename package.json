@@ -1,6 +1,6 @@
 {
   "name": "gioneco-openapi-sdk",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "智元汇开发平台sdk",
   "main": "dist/index.js",
   "scripts": {
